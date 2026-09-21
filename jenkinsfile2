@@ -2,20 +2,20 @@ pipeline {
     agent {
         label 'slave1'
     }
-    parameters {
+    
         environment{
             APP_NAME = 'instant'
             VERSION = '2.5'
         }
-    }
-    Stages {
+    
+    stages {
         stage ('build') {
             steps {
                 echo "building ${APP_NAME}"
                 echo "version ${VERSION}"
             }
         }
-        Stage ('test') {
+        stage ('test') {
             steps {
                 echo "testing ${APP_NAME}"
                 echo "done by krupa" 
