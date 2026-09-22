@@ -1,0 +1,30 @@
+pipeline {
+    agent {
+        label 'slave1'
+    }
+    environment{
+        APP_NAME ='instanthelp'
+        VERSION = '2.0'
+    }
+    stages{
+        stage('build') {
+            steps {
+                echo "building stage ${APP_NAME}"
+                echo "checking version ${VERSION}"
+
+            }
+        }
+        stage('test') {
+            steps {
+                echo "testing of the application"
+            }
+        }
+        stage('deploy') {
+
+        
+        steps {
+            echo "deploy the ${APP_NAME}"
+        }
+        }
+    }
+}
